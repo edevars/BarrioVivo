@@ -67,6 +67,8 @@ const StyledButton = styled.input`
   padding: 10px;
   margin-top: 20px;
   margin-bottom: 25px;
+  outline: none;
+  cursor: pointer;
 `;
 
 const LoginForm = ({ handleChangeInput, handleSubmit }) => {
