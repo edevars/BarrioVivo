@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../../images/logotipo_BV.png";
 import LoginForm from "../../Components/LoginForm";
+import Router from "next/router";
 
 const LoginWrapper = styled.div`
   background: ${props => props.theme.colors.primary};
@@ -28,7 +29,7 @@ const LoginContainer = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(user);
+    Router.push("/dashboard");
   };
 
   return (
