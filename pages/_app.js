@@ -1,4 +1,5 @@
 import App from "next/app";
+import Head from "next/head";
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
@@ -24,6 +25,12 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <GlobalTheme />
+        <Head>
+          <link
+            rel="stylesheet"
+            href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+          />
+        </Head>
         <Component {...pageProps} />
       </ThemeProvider>
     );
