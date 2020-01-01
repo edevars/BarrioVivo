@@ -6,7 +6,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalTheme = createGlobalStyle`
     body{
         margin: 0;
-        font-family: sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 `;
 
