@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "../src/Components/Layout";
+import Loading from "../src/Components/General/Loading";
 
 //Redux
 import { connect } from "react-redux";
@@ -14,9 +15,7 @@ const DashboardPage = props => {
     }
   }, [products]);
 
-  return (
-    <Layout>{loading ? <h1>Se esta cargando</h1> : <h1>Resumen</h1>}</Layout>
-  );
+  return <Layout>{loading ? <Loading /> : <h1>Resumen</h1>}</Layout>;
 };
 
 const mapStateToProps = reducers => {
