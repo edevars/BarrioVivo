@@ -17,7 +17,7 @@ const LoginContainer = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    Router.push("/dashboard");
+    Router.push("/resumen");
   };
 
   return (

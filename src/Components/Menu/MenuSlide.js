@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import Link from "next/link";
 
 const StyledMenu = styled.div`
   background: ${props => props.theme.colors.primary};
@@ -43,18 +44,24 @@ const MenuSlide = ({ open }) => {
     <StyledMenu isOpen={open}>
       <StyledTitle>Menu</StyledTitle>
       <MenuList>
-        <MenuItem>
-          <i class="las la-tasks icon" />
-          Resumen
-        </MenuItem>
-        <MenuItem>
-          <i class="las la-shopping-basket icon" />
-          Productos
-        </MenuItem>
-        <MenuItem style={{ borderBottom: "2px solid white" }}>
-          <i class="las la-cog icon" />
-          Configuración
-        </MenuItem>
+        <Link href="/resumen">
+          <MenuItem>
+            <i class="las la-tasks icon" />
+            Resumen
+          </MenuItem>
+        </Link>
+        <Link href="/productos">
+          <MenuItem>
+            <i class="las la-shopping-basket icon" />
+            Productos
+          </MenuItem>
+        </Link>
+        <Link href="/configuracion">
+          <MenuItem style={{ borderBottom: "2px solid white" }}>
+            <i class="las la-cog icon" />
+            Configuración
+          </MenuItem>
+        </Link>
       </MenuList>
     </StyledMenu>
   );
