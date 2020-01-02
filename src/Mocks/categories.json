@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "nombre": "Lacteos"
+    },
+    {
+      "id": 2,
+      "nombre": "Abarrotes"
+    },
+    {
+      "id": 3,
+      "nombre": "Frutas y verduras"
+    },
+    {
+      "id": 4,
+      "nombre": "Consumibles y desechables"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "category": "Lacteos",
+      "name": "Leche Lala entera",
+      "minStock": 5,
+      "unit": "L",
+      "inStock": 45
+    },
+    {
+      "id": 2,
+      "category": "Lacteos",
+      "name": "Leche Alpura Deslactosada",
+      "minStock": 10,
+      "unit": "L",
+      "inStock": 5
+    },
+    {
+      "id": 3,
+      "category": "Lacteos",
+      "name": "Lechera",
+      "minStock": 10,
+      "unit": "pz",
+      "inStock": 12
+    },
+    {
+      "id": 4,
+      "category": "Lacteos",
+      "name": "Crema Lincon",
+      "minStock": 5,
+      "unit": "pz",
+      "inStock": 2
+    },
+    {
+      "id": 5,
+      "category": "Crema batida",
+      "name": "Lechera",
+      "minStock": 5,
+      "unit": "pz",
+      "inStock": 10
+    },
+    {
+      "id": 6,
+      "category": "Abarrotes",
+      "name": "Azucar",
+      "minStock": 6,
+      "unit": "kg",
+      "inStock": 12
+    },
+    {
+      "id": 7,
+      "category": "Abarrotes",
+      "name": "Frasco de Mayonesa",
+      "minStock": 5,
+      "unit": "pz",
+      "inStock": 12
+    },
+    {
+      "id": 8,
+      "category": "Abarrotes",
+      "name": "Botella de Catsup",
+      "minStock": 5,
+      "unit": "pz",
+      "inStock": 8
+    },
+    {
+      "id": 9,
+      "category": "Abarrotes",
+      "name": "Mayonesa",
+      "minStock": 5,
+      "unit": "pz",
+      "inStock": 12
+    },
+    {
+      "id": 10,
+      "category": "Abarrotes",
+      "name": "Lata de frijoles",
+      "minStock": 8,
+      "unit": "pz",
+      "inStock": 2
+    },
+    {
+      "id": 11,
+      "category": "Frutas y verduras",
+      "name": "Aguacate",
+      "minStock": 2,
+      "unit": "kg",
+      "inStock": 0
+    },
+    {
+      "id": 12,
+      "category": "Frutas y verduras",
+      "name": "Jitomate",
+      "minStock": 2,
+      "unit": "kg",
+      "inStock": 5
+    },
+    {
+      "id": 13,
+      "category": "Frutas y verduras",
+      "name": "Cebolla",
+      "minStock": 2,
+      "unit": "kg",
+      "inStock": 5
+    },
+    {
+      "id": 14,
+      "category": "Frutas y verduras",
+      "name": "Papa",
+      "minStock": 4,
+      "unit": "kg",
+      "inStock": 5
+    },
+    {
+      "id": 15,
+      "category": "Frutas y verduras",
+      "name": "Fresas",
+      "minStock": 6,
+      "unit": "kg",
+      "inStock": 10
+    },
+    {
+      "id": 16,
+      "category": "Consumibles y desechables",
+      "name": "Servilletas",
+      "minStock": 5,
+      "unit": "pz",
+      "inStock": 10
+    },
+    {
+      "id": 17,
+      "category": "Consumibles y desechables",
+      "name": "Vasos medianos para llevar",
+      "minStock": 2,
+      "unit": "pz",
+      "inStock": 4
+    },
+    {
+      "id": 18,
+      "category": "Consumibles y desechables",
+      "name": "Tapas para vaso mediano",
+      "minStock": 10,
+      "unit": "pz",
+      "inStock": 12
+    },
+    {
+      "id": 19,
+      "category": "Consumibles y desechables",
+      "name": "Popotes",
+      "minStock": 2,
+      "unit": "pz",
+      "inStock": 5
+    },
+    {
+      "id": 20,
+      "category": "Consumibles y desechables",
+      "name": "Filtro de cafe",
+      "minStock": 20,
+      "unit": "pz",
+      "inStock": 150
+    }
+  ]
+}
