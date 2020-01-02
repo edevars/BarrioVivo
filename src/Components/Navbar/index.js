@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Menu from "../../Containers/Navbar/Menu";
+import Menu from "../../Containers/Menu";
 import BrandTitle from "./BrandTitle";
 
 const Nav = styled.nav`
@@ -14,8 +14,9 @@ const Nav = styled.nav`
 
 const MenuWrapper = styled.div`
   justify-self: left;
-  display: inline-block;
+  display: flex;
   margin-left: 30px;
+  align-items: center;
 `;
 
 const Navbar = () => {
