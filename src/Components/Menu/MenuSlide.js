@@ -6,7 +6,7 @@ import Link from "next/link";
 const StyledMenu = styled.div`
   background: ${props => props.theme.colors.primary};
   width: 320px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: ${props => (props.isOpen ? "0" : "-320px")};
   bottom: 0;

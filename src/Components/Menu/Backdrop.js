@@ -6,7 +6,7 @@ const StyledBackdrop = styled.div`
   background: ${props => props.theme.colors.dark};
   opacity: 0.5;
   display: ${props => (props.isOpen ? "inherit" : "none")};
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   top: 0;
