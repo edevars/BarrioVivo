@@ -46,19 +46,19 @@ const MenuSlide = ({ open }) => {
       <MenuList>
         <Link href="/resumen">
           <MenuItem>
-            <i class="las la-tasks icon" />
+            <i className="las la-tasks icon" />
             Resumen
           </MenuItem>
         </Link>
         <Link href="/productos">
           <MenuItem>
-            <i class="las la-shopping-basket icon" />
+            <i className="las la-shopping-basket icon" />
             Productos
           </MenuItem>
         </Link>
         <Link href="/configuracion">
           <MenuItem style={{ borderBottom: "2px solid white" }}>
-            <i class="las la-cog icon" />
+            <i className="las la-cog icon" />
             Configuración
           </MenuItem>
         </Link>

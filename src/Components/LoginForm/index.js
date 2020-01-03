@@ -79,7 +79,7 @@ const LoginForm = ({ handleChangeInput, handleSubmit }) => {
       <StyledLoginForm onSubmit={handleSubmit}>
         <StyledInput>
           <label>Username</label>
-          <i class="las la-user icon" />
+          <i className="las la-user icon" />
           <input
             type="text"
             name="username"
@@ -90,7 +90,7 @@ const LoginForm = ({ handleChangeInput, handleSubmit }) => {
         </StyledInput>
         <StyledInput>
           <label>Password</label>
-          <i class="las la-lock icon" />
+          <i className="las la-lock icon" />
           <input
             type="password"
             name="password"
