@@ -5,6 +5,8 @@ const Table = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 1.1rem;
+  box-shadow: 10px 10px 12px -11px ${props => props.theme.bulma.dark};
+  width: ${props => (props.fullWidth ? "100%" : "inherit")};
   .head {
     background: ${props => props.backgroundHead || "black"};
     th {
@@ -22,21 +24,29 @@ const Table = styled.table`
     }
   }
 
-  @media screen and (max-width: 1360px){
+  @media screen and (max-width: 1360px) {
     width: 100%;
   }
 `;
 
-const Replace = ({ products, backgroundHead, foregroundHead }) => {
+const Replace = ({ products, backgroundHead, foregroundHead, fullWidth }) => {
   return (
-    <Table backgroundHead={backgroundHead} foregroundHead={foregroundHead}>
+    <Table
+      backgroundHead={backgroundHead}
+      foregroundHead={foregroundHead}
+      fullWidth={fullWidth}
+    >
       <thead className="head">
         <tr>
           <th>id</th>
           <th width="60%">Nombre</th>
-          <th>
-            <abbr title="Cantindad minima">C. minima</abbr>
-          </th>
+          {fullWidth ? (
+            <th>Existencia minima</th>
+          ) : (
+            <th>
+              <abbr title="Cantindad minima">E. minima</abbr>
+            </th>
+          )}
           <th>En existencia</th>
         </tr>
       </thead>
@@ -57,7 +67,8 @@ const Replace = ({ products, backgroundHead, foregroundHead }) => {
 Replace.propTypes = {
   products: PropTypes.array.isRequired,
   backgroundHead: PropTypes.string.isRequired,
-  foregroundHead: PropTypes.string.isRequired
+  foregroundHead: PropTypes.string.isRequired,
+  fullWidth: PropTypes.bool
 };
 
 export default Replace;
