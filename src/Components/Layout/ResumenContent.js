@@ -8,7 +8,15 @@ const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 50px;
+  column-gap: 100px;
   margin-top: 30px;
+  @media screen and (max-width: 1360px){
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: 1024px){
+    grid-template-columns: 1fr;
+  }
 `;
 
 const GridItem = styled.div`

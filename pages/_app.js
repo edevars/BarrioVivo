@@ -11,6 +11,17 @@ import reduxThunk from "redux-thunk";
 import reducers from "../src/redux/reducers";
 
 const GlobalTheme = createGlobalStyle`
+    html{
+      font-size: 16px;
+      @media screen and (max-width: 720px){
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 420px) {
+        font-size: 12px;
+       }
+    }
+    
     body{
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

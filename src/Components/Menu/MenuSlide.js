@@ -14,6 +14,9 @@ const StyledMenu = styled.div`
   transition-property: all;
   transition-duration: 0.25s;
   transition-timing-function: ease-out;
+  @media screen and (max-width: 420px) {
+    width: 250px;
+  }
 `;
 
 const StyledTitle = styled.h3`

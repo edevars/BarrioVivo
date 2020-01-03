@@ -12,6 +12,10 @@ const StyledTitle = styled.h1`
   margin: 0px;
   margin-right: 60px;
   font-size: 2.5rem;
+  @media screen and (max-width: 720px) {
+    margin-right: 0px;
+    padding-right: 15px;
+  }
 `;
 
 const StyledLogo = styled.img`

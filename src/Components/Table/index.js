@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 const Table = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
-  width: 85%;
   font-size: 1.1rem;
   .head {
     background: ${props => props.backgroundHead || "black"};
@@ -21,6 +20,10 @@ const Table = styled.table`
       border-bottom: 1px solid ${props => props.theme.bulma.greyLight};
       font-size: 1rem;
     }
+  }
+
+  @media screen and (max-width: 1360px){
+    width: 100%;
   }
 `;
 

@@ -5,6 +5,14 @@ import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
   padding: 40px 100px;
+  margin-top: 70px;
+  @media screen and (max-width: 720px) {
+    padding: 30px 20px;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding: 20px 10px;
+  }
 `;
 
 const Layout = ({ children }) => {

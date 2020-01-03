@@ -10,6 +10,8 @@ const Nav = styled.nav`
   color: white;
   padding: 15px 0px;
   display: flex;
+  position: fixed;
+  top: 0;
 `;
 
 const MenuWrapper = styled.div`
