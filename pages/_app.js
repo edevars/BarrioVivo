@@ -6,6 +6,7 @@ import { createGlobalStyle } from "styled-components";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { theme } from "../src/styles/theme";
 import reduxThunk from "redux-thunk";
 import reducers from "../src/redux/reducers";
 
@@ -15,14 +16,6 @@ const GlobalTheme = createGlobalStyle`
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 `;
-
-const theme = {
-  colors: {
-    primary: "#ffb606",
-    dark: "#2a2a2a",
-    light: "#ffffff"
-  }
-};
 
 const store = createStore(
   reducers, // Todos los reducers
