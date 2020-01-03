@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../src/Components/Layout";
+import Loading from "../src/Components/General/Loading";
+import ProductsContent from "../src/Components/Layout/ProductsContent";
 
+//Redux
+import { connect } from "react-redux";
+import * as productsActions from "../src/redux/actions/productsActions";
 
-const DashboardPage = () => {
+const ProductsPage = props => {
+  const { products, getAllProducts, loading, error } = props;
+
+  useEffect(() => {
+    if (!products.length) {
+      getAllProducts();
+    }
+  }, [products]);
+
   return (
     <Layout>
-      <h1>Productos</h1>
+      {loading ? <Loading /> : <ProductsContent products={products} />}
     </Layout>
   );
 };
 
-export default DashboardPage;
+const mapStateToProps = reducers => {
+  return reducers.productsReducer;
+};
+
+export default connect(mapStateToProps, productsActions)(ProductsPage);
