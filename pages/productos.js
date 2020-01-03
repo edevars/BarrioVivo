@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Layout from "../src/Components/Layout";
 import Loading from "../src/Components/General/Loading";
-import ProductsContent from "../src/Components/Layout/ProductsContent";
+import ProductsContainer from "../src/Containers/Products";
 
 //Redux
 import { connect } from "react-redux";
@@ -18,7 +18,7 @@ const ProductsPage = props => {
 
   return (
     <Layout>
-      {loading ? <Loading /> : <ProductsContent products={products} />}
+      {loading ? <Loading /> : <ProductsContainer products={products} />}
     </Layout>
   );
 };
