@@ -39,24 +39,20 @@ const Replace = ({ products, backgroundHead, foregroundHead, fullWidth }) => {
       <thead className="head">
         <tr>
           <th>id</th>
-          <th width="60%">Nombre</th>
-          {fullWidth ? (
-            <th>Existencia minima</th>
-          ) : (
-            <th>
-              <abbr title="Cantindad minima">E. minima</abbr>
-            </th>
-          )}
+          <th width="50%">Nombre</th>
+          <th>Cantidad minima</th>
           <th>En existencia</th>
+          <th>Medida</th>
         </tr>
       </thead>
       <tbody>
-        {products.map(({ id, name, minStock, inStock }) => (
+        {products.map(({ id, name, minStock, inStock, unit }) => (
           <tr key={id}>
             <th>{id}</th>
             <th>{name}</th>
             <th>{minStock}</th>
             <th>{inStock}</th>
+            <th>{unit}</th>
           </tr>
         ))}
       </tbody>
