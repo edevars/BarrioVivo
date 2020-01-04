@@ -35,15 +35,13 @@ const Options = ({ id, handleOpenAdd, handleOpenEdit }) => {
       <i
         className="icon add las la-plus"
         onClick={() => {
-          console.log(`Añadir producto: ${id}`);
-          handleOpenAdd();
+          handleOpenAdd(id);
         }}
       />
       <i
         className="icon edit las la-pen"
         onClick={() => {
-          console.log(`Editar producto: ${id}`);
-          handleOpenEdit();
+          handleOpenEdit(id);
         }}
       />
       <i

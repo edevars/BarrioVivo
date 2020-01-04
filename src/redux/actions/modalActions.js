@@ -13,8 +13,7 @@ export const openAddModal = id => dispatch => {
   });
 };
 
-export const closeAddModal = id => dispatch => {
-  console.log("Se cierra el modal de añadir: ", id);
+export const closeAddModal = () => dispatch => {
 
   dispatch({
     type: CLOSE_MODAL_ADD
@@ -22,15 +21,14 @@ export const closeAddModal = id => dispatch => {
 };
 
 export const openEditModal = id => dispatch => {
-  console.log("Se abre el modal de editar: ", id);
 
   dispatch({
     type: OPEN_MODAL_EDIT
   });
 };
 
-export const closeEditModal = id => dispatch => {
-  console.log("Se cierra el modal de editar: ", id);
+export const closeEditModal = () => dispatch => {
+  console.log("Se cierra el modal de editar: ");
 
   dispatch({
     type: CLOSE_MODAL_EDIT

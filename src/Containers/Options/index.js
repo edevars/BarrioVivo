@@ -1,33 +1,27 @@
 import PropTypes from "prop-types";
 import OptionsMenu from "../../Components/Table/OptionsMenu";
-import useModal from "../../hooks/useModal";
 
-const Options = ({ product }) => {
-  const { id } = product;
+//Redux
+import { connect } from "react-redux";
+import { openAddModal, openEditModal } from "../../redux/actions/modalActions";
+const modalActions = { openAddModal, openEditModal };
 
-  const {
-    open: openAdd,
-    handleOpen: handleOpenAdd,
-    handleClose: handleCloseAdd
-  } = useModal();
-
-  const {
-    open: openEdit,
-    handleOpen: handleOpenEdit,
-    handleClose: handleCloseEdit
-  } = useModal();
+const Options = props => {
+  const { product, openAddModal, openEditModal } = props;
 
   return (
     <OptionsMenu
-      id={id}
-      handleOpenAdd={handleOpenAdd}
-      handleOpenEdit={handleOpenEdit}
+      id={product.id}
+      handleOpenAdd={openAddModal}
+      handleOpenEdit={openEditModal}
     />
   );
 };
+
+const mapStateToProps = reducer => reducer.modalReducer;
 
 Options.propTypes = {
   product: PropTypes.object.isRequired
 };
 
-export default Options;
+export default connect(mapStateToProps, modalActions)(Options);

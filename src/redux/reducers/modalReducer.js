@@ -19,10 +19,10 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, addModal: false };
 
     case OPEN_MODAL_EDIT:
-      return { ...state, addModal: true };
+      return { ...state, editModal: true };
 
     case CLOSE_MODAL_EDIT:
-      return { ...state, addModal: false };
+      return { ...state, editModal: false };
 
     default:
       return state;
