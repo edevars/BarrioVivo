@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import Options from "../../Containers/Options";
 
 const Table = styled.table`
+  .name {
+    width: 50%;
+  }
+
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 1.1rem;
@@ -28,6 +32,24 @@ const Table = styled.table`
   @media screen and (max-width: 1360px) {
     width: 100%;
   }
+
+  @media screen and (max-width: 500px) {
+    .name{
+      width: auto;
+    }
+
+    .head {
+      th {
+        padding: 5px 2px;
+      }
+    }
+
+    tbody {
+      th {
+        padding: 5px 2px;
+      }
+    }
+  }
 `;
 
 const Replace = ({
@@ -46,7 +68,7 @@ const Replace = ({
       <thead className="head">
         <tr>
           <th>id</th>
-          <th width="50%">Nombre</th>
+          <th className="name">Nombre</th>
           <th>Cantidad minima</th>
           <th>En existencia</th>
           <th>Medida</th>

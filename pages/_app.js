@@ -16,10 +16,6 @@ const GlobalTheme = createGlobalStyle`
       @media screen and (max-width: 720px){
         font-size: 14px;
       }
-
-      @media screen and (max-width: 420px) {
-        font-size: 12px;
-       }
     }
     
     body{
