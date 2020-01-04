@@ -21,11 +21,13 @@ const ProductsPage = props => {
   }, [products]);
 
   return (
-    <Layout>
+    <>
       {addModal && <AddModal />}
       {editModal && <EditModal />}
-      {loading ? <Loading /> : <ProductsContainer products={products} />}
-    </Layout>
+      <Layout>
+        {loading ? <Loading /> : <ProductsContainer products={products} />}
+      </Layout>
+    </>
   );
 };
 
