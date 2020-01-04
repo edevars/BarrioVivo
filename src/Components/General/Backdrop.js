@@ -16,13 +16,13 @@ const StyledBackdrop = styled.div`
   z-index: 1;
 `;
 
-const Backdrop = ({ open, closeMenu }) => {
-  return <StyledBackdrop isOpen={open} onClick={closeMenu} />;
+const Backdrop = ({ open, closeBackdrop }) => {
+  return <StyledBackdrop isOpen={open} onClick={closeBackdrop} />;
 };
 
 Backdrop.propTypes = {
   open: PropTypes.bool.isRequired,
-  closeMenu: PropTypes.func.isRequired
+  closeBackdrop: PropTypes.func.isRequired
 };
 
 export default Backdrop;
