@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import Options from "./Options";
+import Options from "../../Containers/Options";
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -54,14 +54,14 @@ const Replace = ({
         </tr>
       </thead>
       <tbody>
-        {products.map(({ id, name, minStock, inStock, unit }) => (
-          <tr key={id}>
-            <th>{id}</th>
-            <th>{name}</th>
-            <th>{minStock}</th>
-            <th>{inStock}</th>
-            <th>{unit}</th>
-            {options && <Options id={id}/>}
+        {products.map(product => (
+          <tr key={product.id}>
+            <th>{product.id}</th>
+            <th>{product.name}</th>
+            <th>{product.minStock}</th>
+            <th>{product.inStock}</th>
+            <th>{product.unit}</th>
+            {options && <Options product={product} />}
           </tr>
         ))}
       </tbody>
