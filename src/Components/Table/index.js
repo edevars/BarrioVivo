@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import Options from "./Options";
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -29,7 +30,13 @@ const Table = styled.table`
   }
 `;
 
-const Replace = ({ products, backgroundHead, foregroundHead, fullWidth }) => {
+const Replace = ({
+  products,
+  backgroundHead,
+  foregroundHead,
+  fullWidth,
+  options
+}) => {
   return (
     <Table
       backgroundHead={backgroundHead}
@@ -43,6 +50,7 @@ const Replace = ({ products, backgroundHead, foregroundHead, fullWidth }) => {
           <th>Cantidad minima</th>
           <th>En existencia</th>
           <th>Medida</th>
+          {options && <th></th>}
         </tr>
       </thead>
       <tbody>
@@ -53,6 +61,7 @@ const Replace = ({ products, backgroundHead, foregroundHead, fullWidth }) => {
             <th>{minStock}</th>
             <th>{inStock}</th>
             <th>{unit}</th>
+            {options && <Options />}
           </tr>
         ))}
       </tbody>
@@ -64,7 +73,8 @@ Replace.propTypes = {
   products: PropTypes.array.isRequired,
   backgroundHead: PropTypes.string.isRequired,
   foregroundHead: PropTypes.string.isRequired,
-  fullWidth: PropTypes.bool
+  fullWidth: PropTypes.bool,
+  options: PropTypes.bool
 };
 
 export default Replace;

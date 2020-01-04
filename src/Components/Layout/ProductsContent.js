@@ -13,6 +13,7 @@ const ProductsContent = ({ theme, products, search, filterByCategory }) => {
       <Table
         products={products}
         fullWidth
+        options
         backgroundHead={theme.bulma.info}
         foregroundHead={theme.bulma.white}
       />
