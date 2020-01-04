@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const OptionsItem = styled.th`
   .icon {
@@ -28,14 +29,33 @@ const OptionsItem = styled.th`
   }
 `;
 
-const Options = () => {
+const Options = ({ id }) => {
   return (
     <OptionsItem>
-      <i className="icon add las la-plus" />
-      <i className="icon edit las la-pen" />
-      <i className="icon delete las la-trash-alt" />
+      <i
+        className="icon add las la-plus"
+        onClick={() => {
+          console.log(`Añadir producto: ${id}`);
+        }}
+      />
+      <i
+        className="icon edit las la-pen"
+        onClick={() => {
+          console.log(`Editar producto: ${id}`);
+        }}
+      />
+      <i
+        className="icon delete las la-trash-alt"
+        onClick={() => {
+          console.log(`Eliminar producto: ${id}`);
+        }}
+      />
     </OptionsItem>
   );
+};
+
+Options.propTypes = {
+  id: PropTypes.number
 };
 
 export default Options;

@@ -61,7 +61,7 @@ const Replace = ({
             <th>{minStock}</th>
             <th>{inStock}</th>
             <th>{unit}</th>
-            {options && <Options />}
+            {options && <Options id={id}/>}
           </tr>
         ))}
       </tbody>
