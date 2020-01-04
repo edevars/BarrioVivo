@@ -34,8 +34,8 @@
     },
     {
       "id": 5,
-      "category": "Crema batida",
-      "name": "Lechera",
+      "category": "Lacteos",
+      "name": "Crema batida",
       "minStock": 5,
       "unit": "pz",
       "inStock": 10
