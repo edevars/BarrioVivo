@@ -4,13 +4,12 @@ import { withTheme } from "styled-components";
 import Search from "../General/Search";
 import Categories from "../../Containers/Categories";
 
-
-const ProductsContent = ({ theme, products, search }) => {
+const ProductsContent = ({ theme, products, search, filterByCategory }) => {
   return (
     <>
       <h1>Productos</h1>
       <Search search={search} />
-      <Categories />
+      <Categories filterByCategory={filterByCategory} />
       <Table
         products={products}
         fullWidth
@@ -24,7 +23,8 @@ const ProductsContent = ({ theme, products, search }) => {
 ProductsContent.propTypes = {
   products: PropTypes.array.isRequired,
   theme: PropTypes.object.isRequired,
-  search: PropTypes.func.isRequired
+  search: PropTypes.func.isRequired,
+  filterByCategory: PropTypes.func.isRequired
 };
 
 export default withTheme(ProductsContent);
