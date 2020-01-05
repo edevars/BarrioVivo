@@ -14,7 +14,6 @@ const FormWrapper = styled.div`
   @media screen and (max-width: 420px) {
     width: 280px;
     left: calc(50% - 140px);
-    top: calc(50vh - 200px);
   }
 `;
 
