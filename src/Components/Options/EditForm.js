@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { getAllCategories } from "../../redux/actions/categoriesActions";
@@ -9,11 +10,12 @@ const FormWrapper = styled.div`
   z-index: 2;
   width: 400px;
   left: calc(50% - 200px);
-  top: calc(50vh - 300px);
+  top: calc(50vh - 350px);
 
   @media screen and (max-width: 420px) {
     width: 280px;
     left: calc(50% - 140px);
+    top: calc(50vh - 300px);
   }
 `;
 
@@ -111,6 +113,29 @@ const StyledForm = styled.form`
 const AddForm = props => {
   const { categories } = props.categoriesReducer;
   const { selectedModalProduct } = props.modalReducer;
+  const {
+    name: productName,
+    category: productCategory,
+    inStock: productInStock,
+    minStock: productMinStock,
+    unit: productUnit
+  } = selectedModalProduct;
+
+  const [form, setForm] = useState({
+    name: productName,
+    category: productCategory,
+    inStock: productInStock,
+    minStock: productMinStock,
+    unit: productUnit
+  });
+
+  const handleChange = event => {
+
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value
+    });
+  };
 
   return (
     <FormWrapper>
@@ -122,9 +147,20 @@ const AddForm = props => {
           }}
         >
           <label>Nombre</label>
-          <StyledInput type="text" value={selectedModalProduct.name} />
+          <StyledInput
+            name="name"
+            type="text"
+            value={form.name}
+            onChange={handleChange}
+          />
+
           <label>Categoria</label>
-          <select name="" id="" value={selectedModalProduct.category}>
+          <select
+            name="category"
+            id=""
+            value={form.category}
+            onChange={handleChange}
+          >
             {categories.map(({ nombre }, index) => (
               <option key={index} value={nombre}>
                 {nombre}
@@ -133,13 +169,23 @@ const AddForm = props => {
           </select>
 
           <label>En existencia</label>
-          <StyledInput type="text" value={selectedModalProduct.inStock} />
+          <StyledInput
+            name="inStock"
+            type="text"
+            value={form.inStock}
+            onChange={handleChange}
+          />
 
           <label>Stock minimo</label>
-          <StyledInput type="text" value={selectedModalProduct.minStock} />
+          <StyledInput
+            name="minStock"
+            type="text"
+            value={form.minStock}
+            onChange={handleChange}
+          />
 
           <label>Unidad</label>
-          <select name="" id="" value={selectedModalProduct.unit}>
+          <select name="unit" id="" value={form.unit} onChange={handleChange}>
             <option value="L">L</option>
             <option value="kg">kg</option>
             <option value="gr">gr</option>
