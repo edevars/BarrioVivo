@@ -6,8 +6,7 @@ import {
   GETTING_MODAL_PRODUCT
 } from "../types/modalTypes";
 
-export const openAddModal = id => dispatch => {
-  console.log("Se abre el modal de añadir: ", id);
+export const openAddModal = () => dispatch => {
 
   dispatch({
     type: OPEN_MODAL_ADD
@@ -21,7 +20,7 @@ export const closeAddModal = () => dispatch => {
 };
 
 export const openEditModal = id => async (dispatch, getState) => {
-  console.log("Se abre el modal de añadir: ", id);
+
   const { products } = getState().productsReducer;
 
   const productFiltered = await products.filter(product => product.id === id);
