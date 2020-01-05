@@ -1,0 +1,5 @@
+export const GET_ALL_USERS = "GET_ALL_USERS";
+export const ERROR_IN_USER = "ERROR_IN_USER";
+export const LOADING_USERS = "LOADING_USERS";
+export const DELETE_USER = "DELETE_USER";
+export const CHANGE_USER_PASSWORD = "CHANGE_USER_PASSWORD";
