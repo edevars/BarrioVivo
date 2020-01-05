@@ -109,7 +109,9 @@ const StyledForm = styled.form`
 `;
 
 const AddForm = props => {
-  const { categories } = props;
+  const { categories } = props.categoriesReducer;
+  const { selectedModalProduct } = props.modalReducer;
+
   return (
     <FormWrapper>
       <InnerWrapper>
@@ -120,19 +122,24 @@ const AddForm = props => {
           }}
         >
           <label>Nombre</label>
-          <StyledInput type="text" />
+          <StyledInput type="text" value={selectedModalProduct.name} />
           <label>Categoria</label>
-          <select name="" id="">
-            {categories.map(({ nombre }) => (
-              <option value={nombre}>{nombre}</option>
+          <select name="" id="" value={selectedModalProduct.category}>
+            {categories.map(({ nombre }, index) => (
+              <option key={index} value={nombre}>
+                {nombre}
+              </option>
             ))}
           </select>
 
+          <label>En existencia</label>
+          <StyledInput type="text" value={selectedModalProduct.inStock} />
+
           <label>Stock minimo</label>
-          <StyledInput type="text" />
+          <StyledInput type="text" value={selectedModalProduct.minStock} />
 
           <label>Unidad</label>
-          <select name="" id="">
+          <select name="" id="" value={selectedModalProduct.unit}>
             <option value="L">L</option>
             <option value="kg">kg</option>
             <option value="gr">gr</option>
@@ -146,6 +153,8 @@ const AddForm = props => {
   );
 };
 
-const mapStateToProps = ({ categoriesReducer }) => categoriesReducer;
+const mapStateToProps = ({ categoriesReducer, modalReducer }) => {
+  return { categoriesReducer, modalReducer };
+};
 
 export default connect(mapStateToProps, { getAllCategories })(AddForm);
