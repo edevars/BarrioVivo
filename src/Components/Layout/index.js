@@ -12,7 +12,7 @@ const Wrapper = styled.main`
   }
 
   @media screen and (max-width: 420px) {
-    padding: 20px 10px;
+    padding: 20px 20px;
   }
 `;
 
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Wrapper>{children}</Wrapper>
+      <Wrapper>{children}</Wrapper>18
       <Footer />
     </>
   );
