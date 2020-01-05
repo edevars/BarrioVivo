@@ -1,12 +1,15 @@
 import Backdrop from "../General/Backdrop";
 import { connect } from "react-redux";
 import * as modalActions from "../../redux/actions/modalActions";
+import EditForm from "../Options/EditForm";
+
 
 const AddModal = props => {
   const { editModal, closeEditModal } = props;
   return (
     <>
       <Backdrop open={editModal} closeBackdrop={closeEditModal} />
+      <EditForm />
     </>
   );
 };
