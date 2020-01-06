@@ -20,29 +20,33 @@ const SettingsPage = props => {
   const isLoading = loadingUsers || loadingCategories;
 
   useEffect(() => {
+    async function fetchData() {
+      if (!categories.length) {
+        await getAllCategories();
+      }
 
-    if (!users.length) {
-      getAllUsers();
+      if (!users.length) {
+        await getAllUsers();
+      }
     }
-
-    if (!categories.length) {
-      getAllCategories();
-    }
+    fetchData();
   }, []);
 
   return (
     <Layout>
       <h1>Configuracion</h1>
-      {isLoading ? <Loading /> : <SettingsContent />}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <SettingsContent users={users} categories={categories} />
+      )}
     </Layout>
   );
 };
 
 const mapDispatchToProps = () => {
-  return {
-    getAllUsers,
-    getAllCategories
-  };
+  let actions = { getAllUsers, getAllCategories };
+  return actions;
 };
 
 const mapStateToProps = ({ categoriesReducer, usersReducer }) => {
@@ -50,4 +54,4 @@ const mapStateToProps = ({ categoriesReducer, usersReducer }) => {
   return reduxStates;
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SettingsPage);
+export default connect(mapStateToProps, mapDispatchToProps())(SettingsPage);
