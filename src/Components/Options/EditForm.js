@@ -161,9 +161,9 @@ const AddForm = props => {
             value={form.category}
             onChange={handleChange}
           >
-            {categories.map(({ nombre }, index) => (
-              <option key={index} value={nombre}>
-                {nombre}
+            {categories.map(({ name }, index) => (
+              <option key={index} value={name}>
+                {name}
               </option>
             ))}
           </select>
