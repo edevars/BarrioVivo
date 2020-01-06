@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Wrapper>{children}</Wrapper>18
+      <Wrapper>{children}</Wrapper>
       <Footer />
     </>
   );
