@@ -3,11 +3,24 @@ import {
   OPEN_MODAL_EDIT,
   CLOSE_MODAL_ADD,
   CLOSE_MODAL_EDIT,
-  GETTING_MODAL_PRODUCT
+  GETTING_MODAL_PRODUCT,
+  OPEN_MODAL_CHANGE_PASSWORD,
+  CLOSE_MODAL_CHANGE_PASSWORD
 } from "../types/modalTypes";
 
-export const openAddModal = () => dispatch => {
+export const openChangePasswordModal = () => dispatch => {
+  dispatch({
+    type: OPEN_MODAL_CHANGE_PASSWORD
+  });
+};
 
+export const closeChangePasswordModal = () => dispatch => {
+  dispatch({
+    type: CLOSE_MODAL_CHANGE_PASSWORD
+  });
+};
+
+export const openAddModal = () => dispatch => {
   dispatch({
     type: OPEN_MODAL_ADD
   });
@@ -20,7 +33,6 @@ export const closeAddModal = () => dispatch => {
 };
 
 export const openEditModal = id => async (dispatch, getState) => {
-
   const { products } = getState().productsReducer;
 
   const productFiltered = await products.filter(product => product.id === id);

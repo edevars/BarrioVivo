@@ -1,18 +1,28 @@
 import Backdrop from "../General/Backdrop";
 import { connect } from "react-redux";
-import * as modalActions from "../../redux/actions/modalActions";
+import ChangePasswordForm from "../Forms/ChangePasswordForm";
+import { closeChangePasswordModal } from "../../redux/actions/modalActions";
 
-
-const AddModal = props => {
-  const { editModal, closeEditModal } = props;
+const ChangePasswordModal = props => {
+  const { changePasswordModal, closeChangePasswordModal } = props;
   return (
     <>
-      <Backdrop open={editModal} closeBackdrop={closeEditModal} />
-      <EditForm />
+      <Backdrop
+        open={changePasswordModal}
+        closeBackdrop={closeChangePasswordModal}
+      />
+      <ChangePasswordForm />
     </>
   );
 };
 
 const mapStateToProps = reducer => reducer.modalReducer;
 
-export default connect(mapStateToProps, modalActions)(AddModal);
+const mapDispatchToProps = {
+  closeChangePasswordModal
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ChangePasswordModal);
