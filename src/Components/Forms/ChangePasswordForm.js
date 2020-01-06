@@ -1,6 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Button from "../General/Button";
+import { toast } from "react-toastify";
+import { closeChangePasswordModal } from "../../redux/actions/modalActions";
+import { connect } from "react-redux";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const FormWrapper = styled.div`
   position: fixed;
@@ -52,7 +58,7 @@ const StyledForm = styled.form`
   }
 `;
 
-const ChangePassword = () => {
+const ChangePassword = ({ closeChangePasswordModal }) => {
   const [form, setForm] = useState({
     password: "",
     repeatPassword: ""
@@ -65,15 +71,23 @@ const ChangePassword = () => {
     });
   };
 
+  const handleSubmit = event => {
+    event.preventDefault();
+    if (form.password.length < 8 || form.repeatPassword.length < 8) {
+      toast.warn("⚠ La contraseña debe tener al menos 8 caracteres");
+    } else if (form.password !== form.repeatPassword) {
+      toast.error("❌ Las contraseñas no son iguales");
+    } else if (form.password === form.repeatPassword) {
+      toast.success("La contraseña se ha cambiado");
+      closeChangePasswordModal();
+    }
+  };
+
   return (
     <FormWrapper>
       <InnerWrapper>
         <Title>Cambiar Contraseña</Title>
-        <StyledForm
-          onSubmit={event => {
-            event.preventDefault();
-          }}
-        >
+        <StyledForm onSubmit={handleSubmit}>
           <label>Nueva Contraseña</label>
           <StyledInput
             name="password"
@@ -95,4 +109,8 @@ const ChangePassword = () => {
   );
 };
 
-export default ChangePassword;
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps, { closeChangePasswordModal })(
+  ChangePassword
+);
