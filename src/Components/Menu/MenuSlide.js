@@ -12,7 +12,7 @@ const StyledMenu = styled.div`
   bottom: 0;
   z-index: 2;
   transition-property: all;
-  transition-duration: 0.25s;
+  transition-duration: 150ms;
   transition-timing-function: ease-out;
   @media screen and (max-width: 420px) {
     width: 250px;
