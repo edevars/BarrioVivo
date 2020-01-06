@@ -12,7 +12,6 @@ const LoginWrapper = styled.div`
   z-index: 1;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0px -1px 52px -14px rgba(227, 227, 227, 1);
   h1 {
     max-width: 300px;
     text-align: center;
