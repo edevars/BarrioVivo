@@ -42,25 +42,28 @@ const MenuItem = styled.li`
   }
 `;
 
-const MenuSlide = ({ open }) => {
+const MenuSlide = ({ open, closeMenu }) => {
   return (
     <StyledMenu isOpen={open}>
       <StyledTitle>Menu</StyledTitle>
       <MenuList>
         <Link href="/resumen">
-          <MenuItem>
+          <MenuItem onClick={closeMenu}>
             <i className="las la-tasks icon" />
             Resumen
           </MenuItem>
         </Link>
         <Link href="/productos">
-          <MenuItem>
+          <MenuItem onClick={closeMenu}>
             <i className="las la-shopping-basket icon" />
             Productos
           </MenuItem>
         </Link>
         <Link href="/configuracion">
-          <MenuItem style={{ borderBottom: "2px solid white" }}>
+          <MenuItem
+            style={{ borderBottom: "2px solid white" }}
+            onClick={closeMenu}
+          >
             <i className="las la-cog icon" />
             Configuración
           </MenuItem>
@@ -71,7 +74,8 @@ const MenuSlide = ({ open }) => {
 };
 
 MenuSlide.propTypes = {
-  open: PropTypes.bool.isRequired
+  open: PropTypes.bool.isRequired,
+  closeMenu: PropTypes.func.isRequired
 };
 
 export default MenuSlide;

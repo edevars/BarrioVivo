@@ -10,11 +10,15 @@ const Menu = () => {
     setOpen(!open);
   };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <MenuIcon openMenu={handleOpen} />
       <Backdrop open={open} closeBackdrop={handleOpen} />
-      <MenuSlide open={open} />
+      <MenuSlide open={open} closeMenu={handleClose}/>
     </>
   );
 };
