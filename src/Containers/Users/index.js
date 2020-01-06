@@ -12,7 +12,17 @@ const Users = ({ users, getAllUsers }) => {
     }
   }, []);
 
-  return <SettingsTable items={users} />;
+  return (
+    <SettingsTable
+      items={users}
+      onClickEdit={id => {
+        console.log(`Se hace click para editar el usuario: ${id}`);
+      }}
+      onClickDelete={id => {
+        console.log(`Se hace click para eliminar el usuario: ${id}`);
+      }}
+    />
+  );
 };
 
 const mapStateToProps = reducers => reducers.usersReducer;

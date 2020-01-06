@@ -98,10 +98,17 @@ const Replace = ({
             <th>{id}</th>
             <th>{name}</th>
             <th>
-              <i className="icon edit las la-pen" onClick={onClickEdit} />
+              <i
+                className="icon edit las la-pen"
+                onClick={() => {
+                  onClickEdit(id);
+                }}
+              />
               <i
                 className="icon delete las la-trash-alt"
-                onClick={onClickDelete}
+                onClick={() => {
+                  onClickDelete(id);
+                }}
               />
             </th>
           </tr>
@@ -115,8 +122,8 @@ Replace.propTypes = {
   items: PropTypes.array.isRequired,
   backgroundHead: PropTypes.string,
   foregroundHead: PropTypes.string,
-  onClickEdit: PropTypes.func,
-  onClickDelete: PropTypes.func
+  onClickEdit: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired
 };
 
 export default Replace;
