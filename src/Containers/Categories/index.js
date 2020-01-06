@@ -25,8 +25,8 @@ const Categories = ({ categories, getAllCategories, filterByCategory }) => {
   return (
     <StyledCategories>
       <Category name="Todos" filterByCategory={filterByCategory} />
-      {categories.map(({ id, nombre }) => (
-        <Category key={id} name={nombre} filterByCategory={filterByCategory} />
+      {categories.map(({ id, name }) => (
+        <Category key={id} name={name} filterByCategory={filterByCategory} />
       ))}
     </StyledCategories>
   );
