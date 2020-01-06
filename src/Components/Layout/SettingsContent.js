@@ -6,13 +6,14 @@ const SubTitle = styled.h3`
   font-size: 1.5rem;
 `;
 
-const SettingsContent = () => {
+const SettingsContent = ({ users, categories }) => {
+
   return (
     <>
       <SubTitle>Usuarios</SubTitle>
-      <Users />
+      <Users users={users} />
       <SubTitle>Categorias</SubTitle>
-      <CategoriesTable />
+      <CategoriesTable categories={categories} />
       <SubTitle>Productos</SubTitle>
     </>
   );

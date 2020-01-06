@@ -19,8 +19,13 @@ const StyledCategories = styled.div`
 
 const Categories = ({ categories, getAllCategories, filterByCategory }) => {
   useEffect(() => {
-    getAllCategories();
-  }, []);
+    async function fetchData() {
+      if (!categories.length) {
+        await getAllCategories();
+      }
+    }
+    fetchData();
+  }, [categories]);
 
   return (
     <StyledCategories>
