@@ -1,7 +1,7 @@
 import Backdrop from "../General/Backdrop";
 import { connect } from "react-redux";
 import * as modalActions from "../../redux/actions/modalActions";
-import AddForm from "../Options/AddForm";
+import AddForm from "../Forms/AddForm";
 
 const AddModal = props => {
   const { addModal, closeAddModal } = props;
