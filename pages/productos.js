@@ -10,9 +10,11 @@ import { connect } from "react-redux";
 import * as productsActions from "../src/redux/actions/productsActions";
 
 const ProductsPage = props => {
-  const { productsState, getAllProducts, modalStates } = props;
+  const { productsState, getAllProducts, modalStates, categoriesState } = props;
   const { products, loading, error } = productsState;
   const { addModal, editModal } = modalStates;
+  const { loading: categoriesLoading } = categoriesState;
+  console.log(props);
 
   useEffect(() => {
     if (!products.length) {
@@ -20,12 +22,14 @@ const ProductsPage = props => {
     }
   }, [products]);
 
+  const isLoading = loading || categoriesLoading;
+
   return (
     <>
       {addModal && <AddModal />}
       {editModal && <EditModal />}
       <Layout>
-        {loading ? <Loading /> : <ProductsContainer products={products} />}
+        {isLoading ? <Loading /> : <ProductsContainer products={products} />}
       </Layout>
     </>
   );
@@ -34,9 +38,10 @@ const ProductsPage = props => {
 const mapStateToProps = reducers => {
   const {
     productsReducer: productsState,
+    categoriesReducer: categoriesState,
     modalReducer: modalStates
   } = reducers;
-  return { productsState, modalStates };
+  return { productsState, modalStates, categoriesState };
 };
 
 export default connect(mapStateToProps, productsActions)(ProductsPage);
