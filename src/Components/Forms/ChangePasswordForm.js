@@ -4,7 +4,6 @@ import Button from "../General/Button";
 import { toast } from "react-toastify";
 import { closeChangePasswordModal } from "../../redux/actions/modalActions";
 import { connect } from "react-redux";
-import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
