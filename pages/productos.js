@@ -14,7 +14,6 @@ const ProductsPage = props => {
   const { products, loading, error } = productsState;
   const { addModal, editModal } = modalStates;
   const { loading: categoriesLoading } = categoriesState;
-  console.log(props);
 
   useEffect(() => {
     if (!products.length) {
