@@ -50,6 +50,10 @@ const Table = styled.table`
       }
     }
   }
+
+  @media screen and (max-width: 365px) {
+    font-size: 1rem;
+  }
 `;
 
 const Replace = ({
