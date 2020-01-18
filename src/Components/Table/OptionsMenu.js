@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { toast } from "react-toastify";
 
 const OptionsItem = styled.th`
   .icon {
@@ -47,7 +48,7 @@ const Options = ({ id, handleOpenAdd, handleOpenEdit }) => {
       <i
         className="icon delete las la-trash-alt"
         onClick={() => {
-          console.log(`Eliminar producto: ${id}`);
+          toast.error(`🥤 Producto con id ${id} eliminado`)
         }}
       />
     </OptionsItem>
