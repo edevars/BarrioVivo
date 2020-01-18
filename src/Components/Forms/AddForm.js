@@ -60,7 +60,7 @@ const ControlsWrapper = styled.div`
   width: 100%;
 `;
 
-const AddForm = () => {
+const AddForm = ({ addProduct }) => {
   const [count, setCount] = useState(0);
 
   const handleInputChange = event => {
@@ -100,7 +100,9 @@ const AddForm = () => {
             <i className="las la-angle-right" />
           </CircleButton>
         </ControlsWrapper>
-        <Button style={{ marginTop: 80 }}>agregar</Button>
+        <Button style={{ marginTop: 80 }} onClick={addProduct}>
+          agregar
+        </Button>
       </InnerWrapper>
     </FormWrapper>
   );
