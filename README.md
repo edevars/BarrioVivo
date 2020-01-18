@@ -2,6 +2,11 @@
 
 Un proyecto inspirado en un excelente restaurante, esta es una apliación de inventario muy sencilla desarrollada con NextJs para SSR, Styled Components para los estilos y Redux para el manejo de estado. La paleta de los colores se basa en Bulma CSS y las pequeñas notificaciones son hechas con react-toastify. 🚀
 
+**Deploy en vivo**
+
+
+[https://barriovivoinventario.now.sh/](https://barriovivoinventario.now.sh/)
+
 ### Instalar dependencias
 
 ```bash
