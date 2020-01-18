@@ -113,6 +113,7 @@ const StyledForm = styled.form`
 const AddForm = props => {
   const { categories } = props.categoriesReducer;
   const { selectedModalProduct } = props.modalReducer;
+  const { editProduct } = props;
   const {
     name: productName,
     category: productCategory,
@@ -130,7 +131,6 @@ const AddForm = props => {
   });
 
   const handleChange = event => {
-
     setForm({
       ...form,
       [event.target.name]: event.target.value
@@ -144,6 +144,7 @@ const AddForm = props => {
         <StyledForm
           onSubmit={event => {
             event.preventDefault();
+            editProduct();
           }}
         >
           <label>Nombre</label>
